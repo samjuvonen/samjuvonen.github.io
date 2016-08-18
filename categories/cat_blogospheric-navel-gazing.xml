@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lightly Seared On The Reality Grill (Blogospheric navel gazing)</title><link>http://samjuvonen.com/</link><description></description><atom:link href="http://samjuvonen.com/categories/cat_blogospheric-navel-gazing.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 18 Aug 2016 19:20:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Choosing a blogging tool</title><link>http://samjuvonen.com/posts/choosing-a-blogging-tool/</link><dc:creator>sjj</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Lightly Seared On The Reality Grill (Blogospheric navel gazing)</title><link>http://samjuvonen.com/</link><description></description><atom:link href="http://samjuvonen.com/categories/cat_blogospheric-navel-gazing.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 18 Aug 2016 19:35:42 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Choosing a blogging tool</title><link>http://samjuvonen.com/posts/choosing-a-blogging-tool/</link><dc:creator>sjj</dc:creator><description>&lt;p&gt;
 So, once one has decided to cast one's words out to the merciless seas of
     information a.k.a. The Internet, how to go about it?
 &lt;/p&gt;
@@ -61,12 +61,12 @@ For a tech-focused blog, publishing for free on &lt;a href="https://pages.github
 a no-brainer. With a static blog engine, you get the freedom to work on
 your posts anywhere, even offline. And with Github, you of course have your
 precious writing under version control. Backups are never more than a
-simple -git clone- / -git pull-. And should I decide to move elsewhere, I can
-just -git push- to an AWS &lt;a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"&gt;S3 backed static blog&lt;/a&gt;, for example.
+simple &lt;code&gt;git clone&lt;/code&gt; / &lt;code&gt;git pull&lt;/code&gt;. And should I decide to move elsewhere, I can
+just &lt;code&gt;git push&lt;/code&gt; to an AWS &lt;a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"&gt;S3 backed static blog&lt;/a&gt;, for example.
 &lt;/p&gt;
 
 &lt;p&gt;
-Nikola has support for Github Pages, -nikola github&lt;sub&gt;deploy&lt;/sub&gt;- does all the
+Nikola has support for Github Pages, &lt;code&gt;nikola github_deploy&lt;/code&gt; does all the
 magic, putting the source files in one git branch, and the rendered HTML
 into the master branch. 
 &lt;/p&gt;

@@ -50,10 +50,10 @@ So, once one has decided to cast one's words out to the merciless seas of
      a no-brainer. With a static blog engine, you get the freedom to work on
      your posts anywhere, even offline. And with Github, you of course have your
      precious writing under version control. Backups are never more than a
-     simple -git clone- / -git pull-. And should I decide to move elsewhere, I can
-     just -git push- to an AWS [[http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html][S3 backed static blog]], for example.
+     simple ~git clone~ / ~git pull~. And should I decide to move elsewhere, I can
+     just ~git push~ to an AWS [[http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html][S3 backed static blog]], for example.
 
-     Nikola has support for Github Pages, -nikola github_deploy- does all the
+     Nikola has support for Github Pages, ~nikola github_deploy~ does all the
      magic, putting the source files in one git branch, and the rendered HTML
      into the master branch. 
 
