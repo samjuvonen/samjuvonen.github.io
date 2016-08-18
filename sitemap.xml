@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://samjuvonen.com/</loc>
-  <lastmod>2016-08-18T19:15:00Z</lastmod>
+  <lastmod>2016-08-18T21:53:00Z</lastmod>
  </url>
  <url>
   <loc>http://samjuvonen.com/2016/</loc>
@@ -15,15 +15,31 @@
  </url>
  <url>
   <loc>http://samjuvonen.com/archive.html</loc>
-  <lastmod>2016-08-18T19:58:00Z</lastmod>
+  <lastmod>2016-08-18T22:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://samjuvonen.com/categories/</loc>
-  <lastmod>2016-08-18T19:20:00Z</lastmod>
+  <lastmod>2016-08-18T20:31:00Z</lastmod>
  </url>
  <url>
   <loc>http://samjuvonen.com/categories/cat_blogospheric-navel-gazing/</loc>
   <lastmod>2016-08-18T19:18:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://samjuvonen.com/categories/cat_emacs/</loc>
+  <lastmod>2016-08-18T20:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://samjuvonen.com/categories/emacs/</loc>
+  <lastmod>2016-08-18T20:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://samjuvonen.com/categories/latex/</loc>
+  <lastmod>2016-08-18T20:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://samjuvonen.com/categories/orgmode/</loc>
+  <lastmod>2016-08-18T20:31:00Z</lastmod>
  </url>
  <url>
   <loc>http://samjuvonen.com/galleries/</loc>
@@ -36,6 +52,14 @@
  <url>
   <loc>http://samjuvonen.com/posts/choosing-a-blogging-tool/</loc>
   <lastmod>2016-08-18T19:18:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://samjuvonen.com/posts/printing-pretty-from-emacs/</loc>
+  <lastmod>2016-08-18T21:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://samjuvonen.com/posts/test/</loc>
+  <lastmod>2016-08-18T21:24:00Z</lastmod>
  </url>
  <url>
   <loc>http://samjuvonen.com/posts/to-blog-or-not/</loc>
