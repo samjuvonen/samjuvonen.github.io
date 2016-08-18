@@ -1,0 +1,4 @@
+Sitemap: http://samjuvonen.com/sitemapindex.xml
+
+User-Agent: *
+Host: samjuvonen.com
