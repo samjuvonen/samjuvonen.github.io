@@ -1,0 +1,29 @@
+#+BEGIN_COMMENT
+.. title: To blog, or not
+.. slug: to-blog-or-not
+.. date: 2016-08-18 12:12:28 UTC-07:00
+.. tags: 
+.. category: blogspheric navel gazing 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+This is a blogospheric navel gazing kind of first post. It aims to have more
+words than "Hello World", and "Testing". You Have Been Warned.
+
+To blog or not to blog, that is the question. In my case it is perhaps
+answered by the fact that this is published on my shiny new blog. Let's hope
+I make it past the second post hurdle.
+
+I've made several attempts at blogging over the years since the idea was
+young. Thankfully internet bitrot has eaten those away. I hope. This time is
+different, ha!
+
+The aims of this Yet Another Tech Blog are modest. I hope to use it to
+organize my own thoughts. Writing in public is a good way to clarify the
+goings-on in one's head-meat. Apart from this notes-to-self aspect I hope
+it'll be useful for highlighting some solutions and tidbits I come across on
+my virtual travels or develop myself.
+
+Wish me luck!

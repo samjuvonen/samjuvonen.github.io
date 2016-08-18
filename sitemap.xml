@@ -7,15 +7,23 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://samjuvonen.com/</loc>
-  <lastmod>2016-08-18T18:54:00Z</lastmod>
+  <lastmod>2016-08-18T19:15:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://samjuvonen.com/2016/</loc>
+  <lastmod>2016-08-18T19:15:00Z</lastmod>
  </url>
  <url>
   <loc>http://samjuvonen.com/archive.html</loc>
-  <lastmod>2016-08-18T18:54:00Z</lastmod>
+  <lastmod>2016-08-18T19:15:00Z</lastmod>
  </url>
  <url>
   <loc>http://samjuvonen.com/categories/</loc>
-  <lastmod>2016-08-18T18:54:00Z</lastmod>
+  <lastmod>2016-08-18T19:15:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://samjuvonen.com/categories/cat_blogspheric-navel-gazing/</loc>
+  <lastmod>2016-08-18T19:15:00Z</lastmod>
  </url>
  <url>
   <loc>http://samjuvonen.com/galleries/</loc>
@@ -24,5 +32,9 @@
  <url>
   <loc>http://samjuvonen.com/listings/</loc>
   <lastmod>2016-08-18T18:54:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://samjuvonen.com/posts/to-blog-or-not/</loc>
+  <lastmod>2016-08-18T19:15:00Z</lastmod>
  </url>
 </urlset>
