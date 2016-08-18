@@ -6,6 +6,10 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>http://samjuvonen.com/categories/cat_blogospheric-navel-gazing.xml</loc>
+  <lastmod>2016-08-18T19:18:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://samjuvonen.com/categories/cat_blogspheric-navel-gazing.xml</loc>
   <lastmod>2016-08-18T19:15:00Z</lastmod>
  </sitemap>
@@ -15,10 +19,10 @@
  </sitemap>
  <sitemap>
   <loc>http://samjuvonen.com/rss.xml</loc>
-  <lastmod>2016-08-18T19:15:00Z</lastmod>
+  <lastmod>2016-08-18T19:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://samjuvonen.com/sitemap.xml</loc>
-  <lastmod>2016-08-18T19:15:00Z</lastmod>
+  <lastmod>2016-08-18T19:18:00Z</lastmod>
  </sitemap>
 </sitemapindex>
