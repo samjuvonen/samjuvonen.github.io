@@ -780,7 +780,7 @@ IMAGE_FOLDERS = {'images': 'images'}
 # vs
 # xcode
 # This list MAY be incomplete since pygments adds styles every now and then.
-CODE_COLOR_SCHEME = 'emacs'
+CODE_COLOR_SCHEME = 'trac'
 
 # If you use 'site-reveal' theme you can select several subthemes
 # THEME_REVEAL_CONFIG_SUBTHEME = 'sky'
@@ -972,7 +972,7 @@ PRETTY_URLS = True
 # EXTRA_HEAD_DATA = """<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">"""
 # USE_KATEX = False
 
-EXTRA_HEAD_DATA = """<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway|Inconsolata|Lora">"""
+EXTRA_HEAD_DATA = """<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Lato|Roboto+Sans+Mono">"""
 
 
 # Do you want to customize the nbconversion of your IPython notebook?
