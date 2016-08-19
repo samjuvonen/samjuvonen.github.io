@@ -972,6 +972,9 @@ PRETTY_URLS = True
 # EXTRA_HEAD_DATA = """<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">"""
 # USE_KATEX = False
 
+EXTRA_HEAD_DATA = """<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Inconsolata:i,b|Gentium+Book+Basic:i,b">"""
+
+
 # Do you want to customize the nbconversion of your IPython notebook?
 # IPYNB_CONFIG = {}
 # With the following example configuration you can use a custom jinja template
