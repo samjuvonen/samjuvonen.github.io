@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="en">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<base href="http://samjuvonen.com/posts/printing-pretty-from-emacs/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Printing pretty from Emacs | Lightly Seared On The Reality Grill</title>
-<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://assets.annotateit.org/annotator/v1.2.5/annotator.min.css">
+<meta content="#5670d4" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="http://samjuvonen.com/posts/printing-pretty-from-emacs/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="sjj">
@@ -22,50 +24,74 @@ exporter, of course. The default output from it is">
 <meta property="article:tag" content="latex">
 <meta property="article:tag" content="orgmode">
 </head>
-<body class="theme-base-0b">
-    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
-    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
-            styles, `#sidebar-checkbox` for behavior. -->
-    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
-        <div class="sidebar-item">
-            <p>A blog by Sam Juvonen.</p>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://samjuvonen.com/">
+
+                <span id="blog-title">Lightly Seared On The Reality Grill</span>
+            </a>
         </div>
-        
-    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">Archive</a>
-        <a class="sidebar-nav-item" href="../../categories/">Tags</a>
-        <a class="sidebar-nav-item" href="../../rss.xml">RSS feed</a>
-    
-    
-    </nav>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../categories/">Tags</a>
+                </li>
+<li>
+<a href="../../rss.xml">RSS feed</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
 </div>
-
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          
-    <h3 id="brand" class="masthead-title">
-      <a href="http://samjuvonen.com/" title="Lightly Seared On The Reality Grill" rel="home">Lightly Seared On The Reality Grill</a>
-    </h3>
-
-        </div>
-      </div>
-
-      <div class="container content" id="content">
-        
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="." class="u-url">Printing pretty from Emacs</a></h1>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Printing pretty from Emacs</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">sjj</span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="post-date published dt-published" datetime="2016-08-18T13:29:22-07:00" itemprop="datePublished" title="2016-08-18 13:29">2016-08-18 13:29</time></a></p>
+            <p class="byline author vcard"><span class="byline-name fn">
+                    sjj
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2016-08-18T13:29:22-07:00" itemprop="datePublished" title="2016-08-18 13:29">2016-08-18 13:29</time></a></p>
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/printing-pretty-from-emacs.html">Comments</a>
 
 
+            
         </p>
-</div>
+<p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+
+        </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
@@ -79,49 +105,49 @@ fonts, but things like hyperlinks are rendered in hideous red boxes.</p>
 setup.</p>
 <p>First of all, let's use XeLaTeX for fonts and Unicode support. LatexMk will know
 how many times the source needs to processed.</p>
-<pre class="code lisp"><a name="rest_code_09d6fe6beb4044aeb3915353adfd0eb9-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">texcmd</span> <span class="s">"latexmk -xelatex"</span><span class="p">)</span>
-<a name="rest_code_09d6fe6beb4044aeb3915353adfd0eb9-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-pdf-process</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">texcmd</span><span class="p">))</span>
+<pre class="code lisp"><a name="rest_code_1ab6456ab0a7461680819fdc4d45942f-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">texcmd</span> <span class="s">"latexmk -xelatex"</span><span class="p">)</span>
+<a name="rest_code_1ab6456ab0a7461680819fdc4d45942f-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-pdf-process</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">texcmd</span><span class="p">))</span>
 </pre>
 <p>Since I don't write formal articles, I don't usually need a table of contents or section
 numbers. If I do, I can set them up in the Org file header.</p>
-<pre class="code lisp"><a name="rest_code_d881d7213b054ad28a0de18bf239d5b4-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-export-with-toc</span> <span class="ss">'nil</span><span class="p">)</span>
-<a name="rest_code_d881d7213b054ad28a0de18bf239d5b4-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-export-with-section-numbers</span> <span class="ss">'nil</span><span class="p">)</span>
+<pre class="code lisp"><a name="rest_code_bbd6567661324e0780ad555a8915046f-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-export-with-toc</span> <span class="ss">'nil</span><span class="p">)</span>
+<a name="rest_code_bbd6567661324e0780ad555a8915046f-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-export-with-section-numbers</span> <span class="ss">'nil</span><span class="p">)</span>
 </pre>
 <p>Import fontspec for easy loading of fonts, and microtype because why not.
 ox-latex needs to be loaded so the alist variables are available.</p>
-<pre class="code lisp"><a name="rest_code_e56610e64f404b7cb30a5510d959b3ab-1"></a><span class="p">(</span><span class="nb">require</span> <span class="ss">'ox-latex</span><span class="p">)</span>
-<a name="rest_code_e56610e64f404b7cb30a5510d959b3ab-2"></a><span class="c1">;; these packages will be used by all org latex exports</span>
-<a name="rest_code_e56610e64f404b7cb30a5510d959b3ab-3"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-packages-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">""</span> <span class="s">"fontspec"</span> <span class="no">nil</span><span class="p">))</span>
-<a name="rest_code_e56610e64f404b7cb30a5510d959b3ab-4"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-packages-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">""</span> <span class="s">"microtype"</span> <span class="no">nil</span><span class="p">))</span>
+<pre class="code lisp"><a name="rest_code_0bbc88d92d6d491fbf058a42f4c73c92-1"></a><span class="p">(</span><span class="nb">require</span> <span class="ss">'ox-latex</span><span class="p">)</span>
+<a name="rest_code_0bbc88d92d6d491fbf058a42f4c73c92-2"></a><span class="c1">;; these packages will be used by all org latex exports</span>
+<a name="rest_code_0bbc88d92d6d491fbf058a42f4c73c92-3"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-packages-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">""</span> <span class="s">"fontspec"</span> <span class="no">nil</span><span class="p">))</span>
+<a name="rest_code_0bbc88d92d6d491fbf058a42f4c73c92-4"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-packages-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">""</span> <span class="s">"microtype"</span> <span class="no">nil</span><span class="p">))</span>
 </pre>
 <p>Now, define an export class that uses nice fonts and non-eye-bleeding
 hyperlinks.</p>
-<pre class="code lisp"><a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-1"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-packages-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">"usenames,dvipsnames"</span> <span class="s">"color"</span> <span class="no">nil</span><span class="p">))</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-2"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-classes</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-3"></a>        <span class="o">'</span><span class="p">(</span><span class="s">"sjj-org-article"</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-4"></a>        <span class="s">"\\documentclass[10pt,letterpaper]{scrartcl}</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-5"></a><span class="s">[DEFAULT-PACKAGES]</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-6"></a><span class="s">[PACKAGES]</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-7"></a><span class="s">\\setromanfont{TeX Gyre Pagella}</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-8"></a><span class="s">\\setsansfont{Linux Biolinum O}</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-9"></a><span class="s">\\setmonofont[Scale=0.9]{DejaVu Sans Mono}</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-10"></a><span class="s">\\pagestyle{empty}</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-11"></a><span class="s">\\hypersetup{</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-12"></a><span class="s">colorlinks = true, % colored links, no hideous boxes</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-13"></a><span class="s">urlcolor   = MidnightBlue, % external hyperlinks</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-14"></a><span class="s">linkcolor  = PineGreen, % internal links</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-15"></a><span class="s">citecolor  = PineGreen  % citations</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-16"></a><span class="s">}</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-17"></a><span class="s">\\title{}</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-18"></a><span class="s">[EXTRA]"</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-19"></a>        <span class="p">(</span><span class="s">"\\section{%s}"</span> <span class="o">.</span> <span class="s">"\\section*{%s}"</span><span class="p">)</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-20"></a>        <span class="p">(</span><span class="s">"\\subsection{%s}"</span> <span class="o">.</span> <span class="s">"\\subsection*{%s}"</span><span class="p">)</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-21"></a>        <span class="p">(</span><span class="s">"\\subsubsection{%s}"</span> <span class="o">.</span> <span class="s">"\\subsubsection*{%s}"</span><span class="p">)</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-22"></a>        <span class="p">(</span><span class="s">"\\paragraph{%s}"</span> <span class="o">.</span> <span class="s">"\\paragraph*{%s}"</span><span class="p">)</span>
-<a name="rest_code_bb147866890a42cfa1c1d680f442d0e2-23"></a>        <span class="p">(</span><span class="s">"\\subparagraph{%s}"</span> <span class="o">.</span> <span class="s">"\\subparagraph*{%s}"</span><span class="p">)))</span>
+<pre class="code lisp"><a name="rest_code_fd070c56284a4b82929efa92762494fe-1"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-packages-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">"usenames,dvipsnames"</span> <span class="s">"color"</span> <span class="no">nil</span><span class="p">))</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-2"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-classes</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-3"></a>        <span class="o">'</span><span class="p">(</span><span class="s">"sjj-org-article"</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-4"></a>        <span class="s">"\\documentclass[10pt,letterpaper]{scrartcl}</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-5"></a><span class="s">[DEFAULT-PACKAGES]</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-6"></a><span class="s">[PACKAGES]</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-7"></a><span class="s">\\setromanfont{TeX Gyre Pagella}</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-8"></a><span class="s">\\setsansfont{Linux Biolinum O}</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-9"></a><span class="s">\\setmonofont[Scale=0.9]{DejaVu Sans Mono}</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-10"></a><span class="s">\\pagestyle{empty}</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-11"></a><span class="s">\\hypersetup{</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-12"></a><span class="s">colorlinks = true, % colored links, no hideous boxes</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-13"></a><span class="s">urlcolor   = MidnightBlue, % external hyperlinks</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-14"></a><span class="s">linkcolor  = PineGreen, % internal links</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-15"></a><span class="s">citecolor  = PineGreen  % citations</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-16"></a><span class="s">}</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-17"></a><span class="s">\\title{}</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-18"></a><span class="s">[EXTRA]"</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-19"></a>        <span class="p">(</span><span class="s">"\\section{%s}"</span> <span class="o">.</span> <span class="s">"\\section*{%s}"</span><span class="p">)</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-20"></a>        <span class="p">(</span><span class="s">"\\subsection{%s}"</span> <span class="o">.</span> <span class="s">"\\subsection*{%s}"</span><span class="p">)</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-21"></a>        <span class="p">(</span><span class="s">"\\subsubsection{%s}"</span> <span class="o">.</span> <span class="s">"\\subsubsection*{%s}"</span><span class="p">)</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-22"></a>        <span class="p">(</span><span class="s">"\\paragraph{%s}"</span> <span class="o">.</span> <span class="s">"\\paragraph*{%s}"</span><span class="p">)</span>
+<a name="rest_code_fd070c56284a4b82929efa92762494fe-23"></a>        <span class="p">(</span><span class="s">"\\subparagraph{%s}"</span> <span class="o">.</span> <span class="s">"\\subparagraph*{%s}"</span><span class="p">)))</span>
 </pre>
 <p>Make this the default Latex export.</p>
-<pre class="code lisp"><a name="rest_code_c21e29d7c1fb44c18e0b848c4bd1a169-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-default-class</span> <span class="s">"sjj-org-article"</span><span class="p">)</span>
+<pre class="code lisp"><a name="rest_code_444f4ae326bc4f2b82e85f119d46c8a9-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-default-class</span> <span class="s">"sjj-org-article"</span><span class="p">)</span>
 </pre>
 <p>Here is a <a class="reference external" href="../../butterchicken.pdf">sample output file</a>  (PDF) from this setup. Not
 too shabby.</p>
@@ -159,18 +185,28 @@ too shabby.</p>
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="samjuvonen";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2016         <a href="mailto:info@samjuvonen.com">sjj</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+        </section></article><script>var disqus_shortname="samjuvonen";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2016         <a href="mailto:info@samjuvonen.com">sjj</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
-    </div>
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-    
-    
-    
-            <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(2, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates -->
+    </script><!-- end fancy dates --><script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script><script src="http://assets.annotateit.org/annotator/v1.2.7/annotator-full.js"></script><script>
+    jQuery(function ($) {
+        $('body').annotator().annotator('setupPlugins', {}, {
+            // Disable filter bar
+            Filter: false
+        });
+    });
+    </script>
 </body>
 </html>
