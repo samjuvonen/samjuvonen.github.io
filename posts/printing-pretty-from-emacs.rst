@@ -86,3 +86,8 @@ too shabby.
 
 You can check out my whole Emacs configuration at `github
 <https://github.com/samjuvonen/dot-emacs/>`_. Comments welcome!
+
+*Credits:* `This emacs-fu post
+<http://emacs-fu.blogspot.com/2011/04/nice-looking-pdfs-with-org-mode-and.html>`_
+was for an earlier version of Org.
+
