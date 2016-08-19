@@ -7,11 +7,13 @@
 .. description: 
 .. type: text
 
-Emacs (The One True Editor) and Orgmode are both a fantastic pairing and an
-infuriating fiendishly complex system. Orgmode comes with a working LaTeX
-exporter, of course. The default output from it is, well, if you've seen default
-Latex output, not very pretty. Not only does it use traditional Latin Modern
-fonts, but things like hyperlinks are rendered in hideous red boxes.
+Emacs (The One True Editor) and Orgmode are both awesome tools and a fantastic
+pairing and also an infuriating, fiendishly complex system. But still lovable.
+For printing or -- more likely -- producing PDFs, Orgmode naturally 
+comes with a working LaTeX exporter. The default output from it is,
+well, if you've seen default Latex output, not very pretty. Not only does it use
+traditional Latin Modern fonts, but things like hyperlinks are rendered in
+hideous red boxes. 
 
 Of course, this being Emacs and Org, this can be fixed. Here's my current
 setup.
