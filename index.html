@@ -87,49 +87,49 @@ hideous red boxes.</p>
 setup.</p>
 <p>First of all, let's use XeLaTeX for fonts and Unicode support. LatexMk will know
 how many times the source needs to processed.</p>
-<pre class="code lisp"><a name="rest_code_72da8997f4d6439a9a58149761d2c585-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">texcmd</span> <span class="s">"latexmk -xelatex"</span><span class="p">)</span>
-<a name="rest_code_72da8997f4d6439a9a58149761d2c585-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-pdf-process</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">texcmd</span><span class="p">))</span>
+<pre class="code lisp"><a name="rest_code_7527bd492d6d40d6b95952068091d423-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">texcmd</span> <span class="s">"latexmk -xelatex"</span><span class="p">)</span>
+<a name="rest_code_7527bd492d6d40d6b95952068091d423-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-pdf-process</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">texcmd</span><span class="p">))</span>
 </pre>
 <p>Since I don't write formal articles, I don't usually need a table of contents or section
 numbers. If I do, I can set them up in the Org file header.</p>
-<pre class="code lisp"><a name="rest_code_b15fbdb7fa4347b88cdbf6500a1d2e8f-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-export-with-toc</span> <span class="ss">'nil</span><span class="p">)</span>
-<a name="rest_code_b15fbdb7fa4347b88cdbf6500a1d2e8f-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-export-with-section-numbers</span> <span class="ss">'nil</span><span class="p">)</span>
+<pre class="code lisp"><a name="rest_code_23ae7af3f374492d94cd314c22429092-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-export-with-toc</span> <span class="ss">'nil</span><span class="p">)</span>
+<a name="rest_code_23ae7af3f374492d94cd314c22429092-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-export-with-section-numbers</span> <span class="ss">'nil</span><span class="p">)</span>
 </pre>
 <p>Import fontspec for easy loading of fonts, and microtype because why not.
 ox-latex needs to be loaded so the alist variables are available.</p>
-<pre class="code lisp"><a name="rest_code_4149feb87c6d44fcb373f43ae94b4a15-1"></a><span class="p">(</span><span class="nb">require</span> <span class="ss">'ox-latex</span><span class="p">)</span>
-<a name="rest_code_4149feb87c6d44fcb373f43ae94b4a15-2"></a><span class="c1">;; these packages will be used by all org latex exports</span>
-<a name="rest_code_4149feb87c6d44fcb373f43ae94b4a15-3"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-packages-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">""</span> <span class="s">"fontspec"</span> <span class="no">nil</span><span class="p">))</span>
-<a name="rest_code_4149feb87c6d44fcb373f43ae94b4a15-4"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-packages-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">""</span> <span class="s">"microtype"</span> <span class="no">nil</span><span class="p">))</span>
+<pre class="code lisp"><a name="rest_code_b0bb134f0a3b42c4b0e71432b8b2ce21-1"></a><span class="p">(</span><span class="nb">require</span> <span class="ss">'ox-latex</span><span class="p">)</span>
+<a name="rest_code_b0bb134f0a3b42c4b0e71432b8b2ce21-2"></a><span class="c1">;; these packages will be used by all org latex exports</span>
+<a name="rest_code_b0bb134f0a3b42c4b0e71432b8b2ce21-3"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-packages-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">""</span> <span class="s">"fontspec"</span> <span class="no">nil</span><span class="p">))</span>
+<a name="rest_code_b0bb134f0a3b42c4b0e71432b8b2ce21-4"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-packages-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">""</span> <span class="s">"microtype"</span> <span class="no">nil</span><span class="p">))</span>
 </pre>
 <p>Now, define an export class that uses nice fonts and non-eye-bleeding
 hyperlinks.</p>
-<pre class="code lisp"><a name="rest_code_1041dc8530104c19bdaecf76f169af6c-1"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-packages-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">"usenames,dvipsnames"</span> <span class="s">"color"</span> <span class="no">nil</span><span class="p">))</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-2"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-classes</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-3"></a>        <span class="o">'</span><span class="p">(</span><span class="s">"sjj-org-article"</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-4"></a>        <span class="s">"\\documentclass[10pt,letterpaper]{scrartcl}</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-5"></a><span class="s">[DEFAULT-PACKAGES]</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-6"></a><span class="s">[PACKAGES]</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-7"></a><span class="s">\\setromanfont{TeX Gyre Pagella}</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-8"></a><span class="s">\\setsansfont{Linux Biolinum O}</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-9"></a><span class="s">\\setmonofont[Scale=0.9]{DejaVu Sans Mono}</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-10"></a><span class="s">\\pagestyle{empty}</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-11"></a><span class="s">\\hypersetup{</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-12"></a><span class="s">colorlinks = true, % colored links, no hideous boxes</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-13"></a><span class="s">urlcolor   = MidnightBlue, % external hyperlinks</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-14"></a><span class="s">linkcolor  = PineGreen, % internal links</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-15"></a><span class="s">citecolor  = PineGreen  % citations</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-16"></a><span class="s">}</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-17"></a><span class="s">\\title{}</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-18"></a><span class="s">[EXTRA]"</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-19"></a>        <span class="p">(</span><span class="s">"\\section{%s}"</span> <span class="o">.</span> <span class="s">"\\section*{%s}"</span><span class="p">)</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-20"></a>        <span class="p">(</span><span class="s">"\\subsection{%s}"</span> <span class="o">.</span> <span class="s">"\\subsection*{%s}"</span><span class="p">)</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-21"></a>        <span class="p">(</span><span class="s">"\\subsubsection{%s}"</span> <span class="o">.</span> <span class="s">"\\subsubsection*{%s}"</span><span class="p">)</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-22"></a>        <span class="p">(</span><span class="s">"\\paragraph{%s}"</span> <span class="o">.</span> <span class="s">"\\paragraph*{%s}"</span><span class="p">)</span>
-<a name="rest_code_1041dc8530104c19bdaecf76f169af6c-23"></a>        <span class="p">(</span><span class="s">"\\subparagraph{%s}"</span> <span class="o">.</span> <span class="s">"\\subparagraph*{%s}"</span><span class="p">)))</span>
+<pre class="code lisp"><a name="rest_code_1765058abaf54534996979c24daaec90-1"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-packages-alist</span> <span class="o">'</span><span class="p">(</span><span class="s">"usenames,dvipsnames"</span> <span class="s">"color"</span> <span class="no">nil</span><span class="p">))</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-2"></a><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'org-latex-classes</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-3"></a>        <span class="o">'</span><span class="p">(</span><span class="s">"sjj-org-article"</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-4"></a>        <span class="s">"\\documentclass[10pt,letterpaper]{scrartcl}</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-5"></a><span class="s">[DEFAULT-PACKAGES]</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-6"></a><span class="s">[PACKAGES]</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-7"></a><span class="s">\\setromanfont{TeX Gyre Pagella}</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-8"></a><span class="s">\\setsansfont{Linux Biolinum O}</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-9"></a><span class="s">\\setmonofont[Scale=0.9]{DejaVu Sans Mono}</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-10"></a><span class="s">\\pagestyle{empty}</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-11"></a><span class="s">\\hypersetup{</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-12"></a><span class="s">colorlinks = true, % colored links, no hideous boxes</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-13"></a><span class="s">urlcolor   = MidnightBlue, % external hyperlinks</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-14"></a><span class="s">linkcolor  = PineGreen, % internal links</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-15"></a><span class="s">citecolor  = PineGreen  % citations</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-16"></a><span class="s">}</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-17"></a><span class="s">\\title{}</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-18"></a><span class="s">[EXTRA]"</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-19"></a>        <span class="p">(</span><span class="s">"\\section{%s}"</span> <span class="o">.</span> <span class="s">"\\section*{%s}"</span><span class="p">)</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-20"></a>        <span class="p">(</span><span class="s">"\\subsection{%s}"</span> <span class="o">.</span> <span class="s">"\\subsection*{%s}"</span><span class="p">)</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-21"></a>        <span class="p">(</span><span class="s">"\\subsubsection{%s}"</span> <span class="o">.</span> <span class="s">"\\subsubsection*{%s}"</span><span class="p">)</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-22"></a>        <span class="p">(</span><span class="s">"\\paragraph{%s}"</span> <span class="o">.</span> <span class="s">"\\paragraph*{%s}"</span><span class="p">)</span>
+<a name="rest_code_1765058abaf54534996979c24daaec90-23"></a>        <span class="p">(</span><span class="s">"\\subparagraph{%s}"</span> <span class="o">.</span> <span class="s">"\\subparagraph*{%s}"</span><span class="p">)))</span>
 </pre>
 <p>Make this the default Latex export.</p>
-<pre class="code lisp"><a name="rest_code_ee4344bcb8574801badefea6a5d66e52-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-default-class</span> <span class="s">"sjj-org-article"</span><span class="p">)</span>
+<pre class="code lisp"><a name="rest_code_3d9adab67fef4b67850b9029b168bc82-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-default-class</span> <span class="s">"sjj-org-article"</span><span class="p">)</span>
 </pre>
 <p>Here is a <a class="reference external" href="butterchicken.pdf">sample output file</a>  (PDF) from this setup. Not
 too shabby.</p>
