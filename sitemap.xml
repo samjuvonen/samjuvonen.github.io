@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>http://samjuvonen.com/archive.html</loc>
-  <lastmod>2016-08-21T23:50:00Z</lastmod>
+  <lastmod>2016-08-21T23:51:00Z</lastmod>
  </url>
  <url>
   <loc>http://samjuvonen.com/categories/</loc>
-  <lastmod>2016-08-21T23:50:00Z</lastmod>
+  <lastmod>2016-08-21T23:51:00Z</lastmod>
  </url>
  <url>
   <loc>http://samjuvonen.com/categories/cat_blogospheric-navel-gazing/</loc>
@@ -30,12 +30,28 @@
   <lastmod>2016-08-21T23:50:00Z</lastmod>
  </url>
  <url>
+  <loc>http://samjuvonen.com/categories/desktop/</loc>
+  <lastmod>2016-08-21T23:51:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://samjuvonen.com/categories/emacs/</loc>
   <lastmod>2016-08-21T23:50:00Z</lastmod>
  </url>
  <url>
+  <loc>http://samjuvonen.com/categories/gnome/</loc>
+  <lastmod>2016-08-21T23:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://samjuvonen.com/categories/keyboard/</loc>
+  <lastmod>2016-08-21T23:51:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://samjuvonen.com/categories/latex/</loc>
   <lastmod>2016-08-21T23:50:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://samjuvonen.com/categories/linux/</loc>
+  <lastmod>2016-08-21T23:51:00Z</lastmod>
  </url>
  <url>
   <loc>http://samjuvonen.com/categories/orgmode/</loc>

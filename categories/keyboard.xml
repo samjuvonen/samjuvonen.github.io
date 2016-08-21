@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Lightly Seared On The Reality Grill (keyboard)</title><link>http://samjuvonen.com/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://samjuvonen.com/categories/keyboard.xml"></atom:link><language>en</language><lastBuildDate>Sun, 21 Aug 2016 23:51:50 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using EURKey in Gnome</title><link>http://samjuvonen.com/posts/using-eurkey-in-gnome/</link><dc:creator>sjj</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="http://eurkey.steffen.bruentjen.eu/start.html"&gt;EurKEY&lt;/a&gt; is the best general
+layout for basic US keyboards. It gives me easy access to keys required by
+Finnish, Swedish, German or any other European languages. These days with
+Unicode in all the things, it's pretty lame to write these languages in 7-bit
+ASCII like it was still the 1970's. Unfortunately it is impossible to configure
+in Gnome's Regional Settings.&lt;/p&gt;
+&lt;p&gt;Fortunately EurKEY is part of ~xkb~ and Gnome keyboard configuration is a
+wrapper around it, it can be set up with ~dconf~ or dconf-editor.&lt;/p&gt;
+&lt;p&gt;To read the current settings:&lt;/p&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_93782c08000b47fe92e8fd9dda6ef8cd-1"&gt;&lt;/a&gt;$ dconf &lt;span class="nb"&gt;read&lt;/span&gt; /org/gnome/desktop/input-sources/sources
+&lt;a name="rest_code_93782c08000b47fe92e8fd9dda6ef8cd-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;[(&lt;/span&gt;&lt;span class="s1"&gt;'xkb'&lt;/span&gt;, &lt;span class="s1"&gt;'us'&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;You can also browse to the above path in dconf-editor.&lt;/p&gt;
+&lt;p&gt;To set the key:&lt;/p&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_eddfafcdd3a646feab117543c1b1d43b-1"&gt;&lt;/a&gt;dconf write /org/gnome/desktop/input-sources/sources &lt;span class="s2"&gt;"[('xkb', 'eu'), ('xkb', 'us+alt-intl')]"&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_d7b3bc539fdf425b8e7dcd8a2ac7d8e8-1"&gt;&lt;/a&gt;$ dconf &lt;span class="nb"&gt;read&lt;/span&gt; /org/gnome/desktop/input-sources/sources
+&lt;a name="rest_code_d7b3bc539fdf425b8e7dcd8a2ac7d8e8-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;[(&lt;/span&gt;&lt;span class="s1"&gt;'xkb'&lt;/span&gt;, &lt;span class="s1"&gt;'eu'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;, &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'xkb'&lt;/span&gt;, &lt;span class="s1"&gt;'us+alt-intl'&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Now ä is on RightAlt-a, ö is on RightAlt-o, and things like ß, ç, ü are pretty much
+where you'd expect them to be. You also have various currency signs (£¥€¢), symbols etc, right under your fingers.&lt;/p&gt;
+&lt;p&gt;Thanks to Steffen Brüntjen for EurKEY! Check &lt;a class="reference external" href="http://eurkey.steffen.bruentjen.eu/start.html"&gt;his site&lt;/a&gt; for details.&lt;/p&gt;&lt;/div&gt;</description><category>desktop</category><category>gnome</category><category>keyboard</category><category>linux</category><guid>http://samjuvonen.com/posts/using-eurkey-in-gnome/</guid><pubDate>Sun, 21 Aug 2016 23:07:23 GMT</pubDate></item></channel></rss>

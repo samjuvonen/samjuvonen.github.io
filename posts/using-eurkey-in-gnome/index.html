@@ -21,6 +21,10 @@ Finnish, Swedish, German or any other European languages. These days with
 Unicode in all the thing">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2016-08-21T16:07:23-07:00">
+<meta property="article:tag" content="desktop">
+<meta property="article:tag" content="gnome">
+<meta property="article:tag" content="keyboard">
+<meta property="article:tag" content="linux">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -103,46 +107,28 @@ in Gnome's Regional Settings.</p>
 <p>Fortunately EurKEY is part of ~xkb~ and Gnome keyboard configuration is a
 wrapper around it, it can be set up with ~dconf~ or dconf-editor.</p>
 <p>To read the current settings:</p>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 13)</p>
-<p>Error in "code" directive:
-maximum 1 argument(s) allowed, 7 supplied.</p>
-<pre class="literal-block">
-.. code:: sh
-  $ dconf read /org/gnome/desktop/input-sources/sources
-  [('xkb', 'us')]
-
+<pre class="code sh"><a name="rest_code_93782c08000b47fe92e8fd9dda6ef8cd-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
+<a name="rest_code_93782c08000b47fe92e8fd9dda6ef8cd-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'us'</span><span class="o">)]</span>
 </pre>
-</div>
 <p>You can also browse to the above path in dconf-editor.</p>
 <p>To set the key:</p>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 21)</p>
-<p>Error in "code" directive:
-maximum 1 argument(s) allowed, 8 supplied.</p>
-<pre class="literal-block">
-.. code:: sh
-  dconf write /org/gnome/desktop/input-sources/sources "[('xkb', 'eu'), ('xkb', 'us+alt-intl')]"
-
+<pre class="code sh"><a name="rest_code_eddfafcdd3a646feab117543c1b1d43b-1"></a>dconf write /org/gnome/desktop/input-sources/sources <span class="s2">"[('xkb', 'eu'), ('xkb', 'us+alt-intl')]"</span>
 </pre>
-</div>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 24)</p>
-<p>Error in "code" directive:
-maximum 1 argument(s) allowed, 9 supplied.</p>
-<pre class="literal-block">
-.. code:: sh
-   $ dconf read /org/gnome/desktop/input-sources/sources
-   [('xkb', 'eu'), ('xkb', 'us+alt-intl')]
-
+<pre class="code sh"><a name="rest_code_d7b3bc539fdf425b8e7dcd8a2ac7d8e8-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
+<a name="rest_code_d7b3bc539fdf425b8e7dcd8a2ac7d8e8-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'eu'</span><span class="o">)</span>, <span class="o">(</span><span class="s1">'xkb'</span>, <span class="s1">'us+alt-intl'</span><span class="o">)]</span>
 </pre>
-</div>
 <p>Now ä is on RightAlt-a, ö is on RightAlt-o, and things like ß, ç, ü are pretty much
 where you'd expect them to be. You also have various currency signs (£¥€¢), symbols etc, right under your fingers.</p>
 <p>Thanks to Steffen Brüntjen for EurKEY! Check <a class="reference external" href="http://eurkey.steffen.bruentjen.eu/start.html">his site</a> for details.</p>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/desktop/" rel="tag">desktop</a></li>
+            <li><a class="tag p-category" href="../../categories/gnome/" rel="tag">gnome</a></li>
+            <li><a class="tag p-category" href="../../categories/keyboard/" rel="tag">keyboard</a></li>
+            <li><a class="tag p-category" href="../../categories/linux/" rel="tag">linux</a></li>
+        </ul>
+<ul class="pager hidden-print">
 <li class="previous">
                 <a href="../printing-pretty-from-emacs/" rel="prev" title="Printing pretty from Emacs">Previous post</a>
             </li>
