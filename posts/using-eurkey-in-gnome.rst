@@ -1,5 +1,5 @@
-.. title: Using EURKey on Gnome
-.. slug: using-eurkey-on-gnome
+.. title: Using EURKey in Gnome
+.. slug: using-eurkey-in-gnome
 .. date: 2016-08-21 16:07:23 UTC-07:00
 .. tags: 
 .. category: 
