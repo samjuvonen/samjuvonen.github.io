@@ -15,10 +15,11 @@
 <meta property="og:site_name" content="Lightly Seared On The Reality Grill">
 <meta property="og:title" content="Using EURKey in Gnome">
 <meta property="og:url" content="http://samjuvonen.com/posts/using-eurkey-in-gnome/">
-<meta property="og:description" content="EurKEY is the best general
-layout for basic US keyboards. It gives me easy access to keys required by
-Finnish, Swedish, German or any other European languages. These days with
-Unicode in all the thing">
+<meta property="og:description" content="Update: Well, it seems that Gnome 3.20 on Fedora 24 actually has EurKEY
+selectable from the GUI. Nice! The rest of the post is still accurate, if
+a bit superfluous now.
+EurKEY is the best general
+layo">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2016-08-21T16:07:23-07:00">
 <meta property="article:tag" content="desktop">
@@ -98,6 +99,9 @@ Unicode in all the thing">
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
+<p><cite>Update:</cite> Well, it seems that Gnome 3.20 on Fedora 24 actually has EurKEY
+selectable from the GUI. Nice! The rest of the post is still accurate, if
+a bit superfluous now.</p>
 <p><a class="reference external" href="http://eurkey.steffen.bruentjen.eu/start.html">EurKEY</a> is the best general
 layout for basic US keyboards. It gives me easy access to keys required by
 Finnish, Swedish, German or any other European languages. These days with
@@ -107,16 +111,16 @@ in Gnome's Regional Settings.</p>
 <p>Fortunately EurKEY is part of <cite>xkb</cite> and Gnome keyboard configuration is a
 wrapper around it, it can be set up with <cite>dconf</cite> or dconf-editor.</p>
 <p>To read the current settings:</p>
-<pre class="code sh"><a name="rest_code_ca59705643f84c7e9fe59b8210a61f11-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
-<a name="rest_code_ca59705643f84c7e9fe59b8210a61f11-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'us'</span><span class="o">)]</span>
+<pre class="code sh"><a name="rest_code_4687055acff34d9ca092ac9bf415ee92-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
+<a name="rest_code_4687055acff34d9ca092ac9bf415ee92-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'us'</span><span class="o">)]</span>
 </pre>
 <p>You can also browse to the above path in dconf-editor.</p>
 <p>To set the key, write to it. The example show setting a secondary layout as well that
 you can switch to in Gnome.</p>
-<pre class="code sh"><a name="rest_code_6cba3a33555f4f3a874000bcb236f1ba-1"></a>$ dconf write /org/gnome/desktop/input-sources/sources <span class="s2">"[('xkb', 'eu'), ('xkb', 'us+alt-intl')]"</span>
+<pre class="code sh"><a name="rest_code_9d1dbaf7ccb4406ebc95fcf956204b19-1"></a>$ dconf write /org/gnome/desktop/input-sources/sources <span class="s2">"[('xkb', 'eu'), ('xkb', 'us+alt-intl')]"</span>
 </pre>
-<pre class="code sh"><a name="rest_code_bf4b9d7ad8a1476799d0a158e042cc45-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
-<a name="rest_code_bf4b9d7ad8a1476799d0a158e042cc45-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'eu'</span><span class="o">)</span>, <span class="o">(</span><span class="s1">'xkb'</span>, <span class="s1">'us+alt-intl'</span><span class="o">)]</span>
+<pre class="code sh"><a name="rest_code_a6ea91a8a320482facafd3140a38d1a1-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
+<a name="rest_code_a6ea91a8a320482facafd3140a38d1a1-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'eu'</span><span class="o">)</span>, <span class="o">(</span><span class="s1">'xkb'</span>, <span class="s1">'us+alt-intl'</span><span class="o">)]</span>
 </pre>
 <p>Now ä is on RightAlt-a, ö is on RightAlt-o, and things like ß, ç, ü are pretty
 much where you'd expect them to be. You also have various currency signs (£¥€¢),
