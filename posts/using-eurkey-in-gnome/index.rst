@@ -26,7 +26,8 @@ To read the current settings:
 
 You can also browse to the above path in dconf-editor.
 
-To set the key:
+To set the key, write to it. The example show setting a secondary layout as well that
+you can switch to in Gnome.
 
 .. code:: sh
    

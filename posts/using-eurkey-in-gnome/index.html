@@ -107,15 +107,16 @@ in Gnome's Regional Settings.</p>
 <p>Fortunately EurKEY is part of <cite>xkb</cite> and Gnome keyboard configuration is a
 wrapper around it, it can be set up with <cite>dconf</cite> or dconf-editor.</p>
 <p>To read the current settings:</p>
-<pre class="code sh"><a name="rest_code_86f6d30dc5214616af07f22cd23dd57e-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
-<a name="rest_code_86f6d30dc5214616af07f22cd23dd57e-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'us'</span><span class="o">)]</span>
+<pre class="code sh"><a name="rest_code_ca59705643f84c7e9fe59b8210a61f11-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
+<a name="rest_code_ca59705643f84c7e9fe59b8210a61f11-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'us'</span><span class="o">)]</span>
 </pre>
 <p>You can also browse to the above path in dconf-editor.</p>
-<p>To set the key:</p>
-<pre class="code sh"><a name="rest_code_9b09ae06ad5e4e3594307fc7fe3df947-1"></a>$ dconf write /org/gnome/desktop/input-sources/sources <span class="s2">"[('xkb', 'eu'), ('xkb', 'us+alt-intl')]"</span>
+<p>To set the key, write to it. The example show setting a secondary layout as well that
+you can switch to in Gnome.</p>
+<pre class="code sh"><a name="rest_code_6cba3a33555f4f3a874000bcb236f1ba-1"></a>$ dconf write /org/gnome/desktop/input-sources/sources <span class="s2">"[('xkb', 'eu'), ('xkb', 'us+alt-intl')]"</span>
 </pre>
-<pre class="code sh"><a name="rest_code_1864144aab264a62a560e8a3b0d79d94-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
-<a name="rest_code_1864144aab264a62a560e8a3b0d79d94-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'eu'</span><span class="o">)</span>, <span class="o">(</span><span class="s1">'xkb'</span>, <span class="s1">'us+alt-intl'</span><span class="o">)]</span>
+<pre class="code sh"><a name="rest_code_bf4b9d7ad8a1476799d0a158e042cc45-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
+<a name="rest_code_bf4b9d7ad8a1476799d0a158e042cc45-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'eu'</span><span class="o">)</span>, <span class="o">(</span><span class="s1">'xkb'</span>, <span class="s1">'us+alt-intl'</span><span class="o">)]</span>
 </pre>
 <p>Now ä is on RightAlt-a, ö is on RightAlt-o, and things like ß, ç, ü are pretty
 much where you'd expect them to be. You also have various currency signs (£¥€¢),
