@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <base href="http://samjuvonen.com/posts/using-eurkey-in-gnome/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Using EURKey in Gnome | Lightly Seared On The Reality Grill</title>
+<title>Using EurKEY in Gnome | Lightly Seared On The Reality Grill</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta content="#5670d4" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
@@ -13,7 +13,7 @@
 <meta name="author" content="sjj">
 <link rel="prev" href="../printing-pretty-from-emacs/" title="Printing pretty from Emacs" type="text/html">
 <meta property="og:site_name" content="Lightly Seared On The Reality Grill">
-<meta property="og:title" content="Using EURKey in Gnome">
+<meta property="og:title" content="Using EurKEY in Gnome">
 <meta property="og:url" content="http://samjuvonen.com/posts/using-eurkey-in-gnome/">
 <meta property="og:description" content="Update: Well, it seems that Gnome 3.20 on Fedora 24 actually has EurKEY
 selectable from the GUI. Nice! The rest of the post is still accurate, if
@@ -78,7 +78,7 @@ layo">
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Using EURKey in Gnome</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Using EurKEY in Gnome</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
@@ -111,16 +111,16 @@ in Gnome's Regional Settings.</p>
 <p>Fortunately EurKEY is part of <cite>xkb</cite> and Gnome keyboard configuration is a
 wrapper around it, it can be set up with <cite>dconf</cite> or dconf-editor.</p>
 <p>To read the current settings:</p>
-<pre class="code sh"><a name="rest_code_4687055acff34d9ca092ac9bf415ee92-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
-<a name="rest_code_4687055acff34d9ca092ac9bf415ee92-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'us'</span><span class="o">)]</span>
+<pre class="code sh"><a name="rest_code_c099f6b8c30b4009aae5894b40d011f1-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
+<a name="rest_code_c099f6b8c30b4009aae5894b40d011f1-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'us'</span><span class="o">)]</span>
 </pre>
 <p>You can also browse to the above path in dconf-editor.</p>
 <p>To set the key, write to it. The example show setting a secondary layout as well that
 you can switch to in Gnome.</p>
-<pre class="code sh"><a name="rest_code_9d1dbaf7ccb4406ebc95fcf956204b19-1"></a>$ dconf write /org/gnome/desktop/input-sources/sources <span class="s2">"[('xkb', 'eu'), ('xkb', 'us+alt-intl')]"</span>
+<pre class="code sh"><a name="rest_code_b3deeb0dea7e40daa962c06188df323f-1"></a>$ dconf write /org/gnome/desktop/input-sources/sources <span class="s2">"[('xkb', 'eu'), ('xkb', 'us+alt-intl')]"</span>
 </pre>
-<pre class="code sh"><a name="rest_code_a6ea91a8a320482facafd3140a38d1a1-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
-<a name="rest_code_a6ea91a8a320482facafd3140a38d1a1-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'eu'</span><span class="o">)</span>, <span class="o">(</span><span class="s1">'xkb'</span>, <span class="s1">'us+alt-intl'</span><span class="o">)]</span>
+<pre class="code sh"><a name="rest_code_d1c9e345f6b14a57ac1db58b171cefd3-1"></a>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
+<a name="rest_code_d1c9e345f6b14a57ac1db58b171cefd3-2"></a><span class="o">[(</span><span class="s1">'xkb'</span>, <span class="s1">'eu'</span><span class="o">)</span>, <span class="o">(</span><span class="s1">'xkb'</span>, <span class="s1">'us+alt-intl'</span><span class="o">)]</span>
 </pre>
 <p>Now ä is on RightAlt-a, ö is on RightAlt-o, and things like ß, ç, ü are pretty
 much where you'd expect them to be. You also have various currency signs (£¥€¢),
@@ -145,7 +145,7 @@ symbols etc, right under your fingers.</p>
         <script>
         var disqus_shortname ="samjuvonen",
             disqus_url="http://samjuvonen.com/posts/using-eurkey-in-gnome/",
-        disqus_title="Using EURKey in Gnome",
+        disqus_title="Using EurKEY in Gnome",
         disqus_identifier="cache/posts/using-eurkey-in-gnome.html",
         disqus_config = function () {
             this.language = "en";

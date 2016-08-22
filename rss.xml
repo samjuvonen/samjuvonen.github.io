@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Lightly Seared On The Reality Grill</title><link>http://samjuvonen.com/</link><description>Look ma, a blog!</description><atom:link type="application/rss+xml" href="http://samjuvonen.com/rss.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 22 Aug 2016 05:05:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using EURKey in Gnome</title><link>http://samjuvonen.com/posts/using-eurkey-in-gnome/</link><dc:creator>sjj</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;cite&gt;Update:&lt;/cite&gt; Well, it seems that Gnome 3.20 on Fedora 24 actually has EurKEY
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Lightly Seared On The Reality Grill</title><link>http://samjuvonen.com/</link><description>Look ma, a blog!</description><atom:link rel="self" type="application/rss+xml" href="http://samjuvonen.com/rss.xml"></atom:link><language>en</language><lastBuildDate>Mon, 22 Aug 2016 07:25:04 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using EurKEY in Gnome</title><link>http://samjuvonen.com/posts/using-eurkey-in-gnome/</link><dc:creator>sjj</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;cite&gt;Update:&lt;/cite&gt; Well, it seems that Gnome 3.20 on Fedora 24 actually has EurKEY
 selectable from the GUI. Nice! The rest of the post is still accurate, if
 a bit superfluous now.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://eurkey.steffen.bruentjen.eu/start.html"&gt;EurKEY&lt;/a&gt; is the best general
@@ -11,14 +11,14 @@ in Gnome's Regional Settings.&lt;/p&gt;
 &lt;p&gt;Fortunately EurKEY is part of &lt;cite&gt;xkb&lt;/cite&gt; and Gnome keyboard configuration is a
 wrapper around it, it can be set up with &lt;cite&gt;dconf&lt;/cite&gt; or dconf-editor.&lt;/p&gt;
 &lt;p&gt;To read the current settings:&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_4687055acff34d9ca092ac9bf415ee92-1"&gt;&lt;/a&gt;$ dconf &lt;span class="nb"&gt;read&lt;/span&gt; /org/gnome/desktop/input-sources/sources
-&lt;a name="rest_code_4687055acff34d9ca092ac9bf415ee92-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;[(&lt;/span&gt;&lt;span class="s1"&gt;'xkb'&lt;/span&gt;, &lt;span class="s1"&gt;'us'&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_c099f6b8c30b4009aae5894b40d011f1-1"&gt;&lt;/a&gt;$ dconf &lt;span class="nb"&gt;read&lt;/span&gt; /org/gnome/desktop/input-sources/sources
+&lt;a name="rest_code_c099f6b8c30b4009aae5894b40d011f1-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;[(&lt;/span&gt;&lt;span class="s1"&gt;'xkb'&lt;/span&gt;, &lt;span class="s1"&gt;'us'&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;You can also browse to the above path in dconf-editor.&lt;/p&gt;
 &lt;p&gt;To set the key, write to it. The example show setting a secondary layout as well that
 you can switch to in Gnome.&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_9d1dbaf7ccb4406ebc95fcf956204b19-1"&gt;&lt;/a&gt;$ dconf write /org/gnome/desktop/input-sources/sources &lt;span class="s2"&gt;"[('xkb', 'eu'), ('xkb', 'us+alt-intl')]"&lt;/span&gt;
-&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_a6ea91a8a320482facafd3140a38d1a1-1"&gt;&lt;/a&gt;$ dconf &lt;span class="nb"&gt;read&lt;/span&gt; /org/gnome/desktop/input-sources/sources
-&lt;a name="rest_code_a6ea91a8a320482facafd3140a38d1a1-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;[(&lt;/span&gt;&lt;span class="s1"&gt;'xkb'&lt;/span&gt;, &lt;span class="s1"&gt;'eu'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;, &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'xkb'&lt;/span&gt;, &lt;span class="s1"&gt;'us+alt-intl'&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_b3deeb0dea7e40daa962c06188df323f-1"&gt;&lt;/a&gt;$ dconf write /org/gnome/desktop/input-sources/sources &lt;span class="s2"&gt;"[('xkb', 'eu'), ('xkb', 'us+alt-intl')]"&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_d1c9e345f6b14a57ac1db58b171cefd3-1"&gt;&lt;/a&gt;$ dconf &lt;span class="nb"&gt;read&lt;/span&gt; /org/gnome/desktop/input-sources/sources
+&lt;a name="rest_code_d1c9e345f6b14a57ac1db58b171cefd3-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;[(&lt;/span&gt;&lt;span class="s1"&gt;'xkb'&lt;/span&gt;, &lt;span class="s1"&gt;'eu'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;, &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'xkb'&lt;/span&gt;, &lt;span class="s1"&gt;'us+alt-intl'&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Now ä is on RightAlt-a, ö is on RightAlt-o, and things like ß, ç, ü are pretty
 much where you'd expect them to be. You also have various currency signs (£¥€¢),
 symbols etc, right under your fingers.&lt;/p&gt;
