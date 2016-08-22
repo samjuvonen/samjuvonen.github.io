@@ -7,6 +7,10 @@
 .. description: 
 .. type: text
 
+`Update:` Well, it seems that Gnome 3.20 on Fedora 24 actually has EurKEY
+selectable from the GUI. Nice! The rest of the post is still accurate, if
+a bit superfluous now.
+
 `EurKEY <http://eurkey.steffen.bruentjen.eu/start.html>`_ is the best general
 layout for basic US keyboards. It gives me easy access to keys required by
 Finnish, Swedish, German or any other European languages. These days with
