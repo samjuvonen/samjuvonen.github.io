@@ -6,8 +6,71 @@
     <description>Recent content on samjuvonen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Sep 2016 16:41:07 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 07 Sep 2016 16:05:59 -0700</lastBuildDate>
     <atom:link href="https://samjuvonen.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Quick Ansible structure initialization</title>
+      <link>https://samjuvonen.com/2016/09/quick-ansible-structure-initialization</link>
+      <pubDate>Wed, 07 Sep 2016 16:05:59 -0700</pubDate>
+      
+      <guid>https://samjuvonen.com/2016/09/quick-ansible-structure-initialization</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.ansible.com&#34;&gt;Ansible&lt;/a&gt; recommends using a specific directory
+structure as a
+&lt;a href=&#34;http://docs.ansible.com/ansible/playbooks_best_practices.html&#34;&gt;best practice&lt;/a&gt;.
+When using roles, ansible will find all the supporting files for variables,
+templates, etc in this directory tree.&lt;/p&gt;
+
+&lt;p&gt;Here is a quick and dirty little script to initialize this directory structure.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# ----------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# Quick and dirty Ansible directory structure initialization.&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# Based on http://docs.ansible.com/ansible/playbooks_best_practices.html&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# Run it in your playbook root directory. ./roles/ is created here.&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# Sami Juvonen 2016. This script is in the public domain.&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# ----------------------------------------------------------------------&lt;/span&gt;
+
+usage&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nb&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;%s\n&amp;quot;&lt;/span&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;quot;usage: &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$0&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; top       Create top level dirs.&amp;quot;&lt;/span&gt;
+    &lt;span class=&#34;nb&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;%s\n\n&amp;quot;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;       &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$0&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; role foo  Create role named foo.&amp;quot;&lt;/span&gt;
+    &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; 1
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt; in
+    top&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+        mkdir -p group_vars 
+        mkdir -p host_vars 
+        mkdir -p library 
+        mkdir -p filter_plugins
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; ! -e site.yml &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+            &lt;span class=&#34;nb&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;# sitewide master playbook\n---\n&amp;quot;&lt;/span&gt; &amp;gt; site.yml
+        &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+        
+        &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+    role&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+            mkdir -p roles/&lt;span class=&#34;nv&#34;&gt;$2&lt;/span&gt;/&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;templates,files&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; f in roles/&lt;span class=&#34;nv&#34;&gt;$2&lt;/span&gt;/&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;tasks,handlers,vars,defaults,meta&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+                mkdir -p &lt;span class=&#34;nv&#34;&gt;$f&lt;/span&gt;
+                &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; ! -e &lt;span class=&#34;nv&#34;&gt;$f&lt;/span&gt;/main.yml &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+                    &lt;span class=&#34;nb&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;# &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$f&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/main.yml\n---\n&amp;quot;&lt;/span&gt; &amp;gt; &lt;span class=&#34;nv&#34;&gt;$f&lt;/span&gt;/main.yml
+                &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+            usage
+        &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+    *&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+        usage
+&lt;span class=&#34;k&#34;&gt;esac&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Just run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span&gt;&lt;/span&gt;$ ansibleinit top
+$ ansibleinit role my-fabulous-role
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>About me</title>
