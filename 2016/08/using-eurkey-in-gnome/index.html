@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>samjuvonen.com &middot; Lightly Seared on the Reality Grill</title>
+        <title>Lightly Seared on the Reality Grill</title>
         <meta name="author" content="Sami Juvonen">
         <meta name="description" content="Techie notes carved on some passing electrons.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,12 +46,12 @@
             </div>
         </header>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-        
-        
-            <article class="post">
-    
+        <article class="post">
+            <a class="btn home" href="https://samjuvonen.com/" title=""> ◀ </a>
+            
 <h1><a href="https://samjuvonen.com/2016/08/using-eurkey-in-gnome" title="Using EurKEY in Gnome">Using EurKEY in Gnome</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.08.21">2016.08.21</time>
@@ -71,7 +71,7 @@
 </span>
 </footer>
 
-    <p><em>Update:</em> Well, it seems that Gnome 3.20 on Fedora 24 actually has EurKEY
+            <p><em>Update:</em> Well, it seems that Gnome 3.20 on Fedora 24 actually has EurKEY
 selectable from the GUI. Nice! The rest of the post is still accurate,
 if a bit superfluous now.</p>
 
@@ -81,54 +81,54 @@ Finnish, Swedish, German or any other European languages. These days with
 Unicode in all the things, it&rsquo;s pretty lame to write these languages in 7-bit
 ASCII like it was still the 1970&rsquo;s. Unfortunately it is impossible to configure
 in Gnome&rsquo;s Regional Settings.</p>
-    <a href="https://samjuvonen.com/2016/08/using-eurkey-in-gnome" title="Using EurKEY in Gnome"> Read more&hellip;</a>
-</article>
 
-        
-            <article class="post">
-    
-<h1><a href="https://samjuvonen.com/2016/08/printing-pretty-from-emacs" title="Printing pretty from Emacs">Printing pretty from Emacs</a></h1>
+<p>Fortunately EurKEY is part of xkb and Gnome keyboard configuration is a
+wrapper around it, it can be set up with <code>dconf</code> or dconf-editor.</p>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.08.18">2016.08.18</time>
+<p>To read the current settings:</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span></span>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
+<span class="o">[(</span><span class="s1">&#39;xkb&#39;</span>, <span class="s1">&#39;us&#39;</span><span class="o">)]</span>
+</code></pre></div>
 
-    &middot; 
-        
-        <a href="https://samjuvonen.com/tags/emacs">emacs</a>, 
-        
-        <a href="https://samjuvonen.com/tags/orgmode">orgmode</a>, 
-        
-        <a href="https://samjuvonen.com/tags/latex">latex</a>
-        
-    
+<p>You can also browse to the above path in dconf-editor.</p>
 
-</span>
-</footer>
+<p>To set the key, write to it. The example show setting a secondary layout
+as well that you can switch to in Gnome.</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span></span>$ dconf write /org/gnome/desktop/input-sources/sources <span class="s2">&quot;[(&#39;xkb&#39;, &#39;eu&#39;), (&#39;xkb&#39;, &#39;us+alt-intl&#39;)]&quot;</span> 
+</code></pre></div>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span></span>$ dconf <span class="nb">read</span> /org/gnome/desktop/input-sources/sources
+<span class="o">[(</span><span class="s1">&#39;xkb&#39;</span>, <span class="s1">&#39;eu&#39;</span><span class="o">)</span>, <span class="o">(</span><span class="s1">&#39;xkb&#39;</span>, <span class="s1">&#39;us+alt-intl&#39;</span><span class="o">)]</span>
+</code></pre></div>
 
-    <p>Emacs (The One True Editor) and Orgmode are both awesome tools and a
-fantastic pairing and also an infuriating, fiendishly complex system.
-But still lovable. For printing or &ndash; more likely &ndash; producing PDFs,
-Orgmode naturally comes with a working LaTeX exporter. The default
-output from it is, well, if you&rsquo;ve seen default Latex output, not very
-pretty. Not only does it use traditional Latin Modern fonts, but things
-like hyperlinks are rendered in hideous red boxes.</p>
+<p>Now ä is on RightAlt-a, ö is on RightAlt-o, and things like ß, ç, ü are
+pretty much where you&rsquo;d expect them to be. You also have various
+currency signs (£¥€¢), symbols etc, right under your fingers.</p>
 
-<p>Of course, this being Emacs and Org, this can be fixed. Here&rsquo;s my
-current setup.</p>
-    <a href="https://samjuvonen.com/2016/08/printing-pretty-from-emacs" title="Printing pretty from Emacs"> Read more&hellip;</a>
-</article>
+<p>Thanks to Steffen Brüntjen for EurKEY! Check <a href="http://eurkey.steffen.bruentjen.eu/start.html">his
+site</a> for details.</p>
 
-        
-        <div class="pagination">
-<nav>
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsamjuvonen.com%2f2016%2f08%2fusing-eurkey-in-gnome" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Using%20EurKEY%20in%20Gnome&amp;url=https%3a%2f%2fsamjuvonen.com%2f2016%2f08%2fusing-eurkey-in-gnome" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fsamjuvonen.com%2f2016%2f08%2fusing-eurkey-in-gnome" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fsamjuvonen.com%2f2016%2f08%2fusing-eurkey-in-gnome&title=Using%20EurKEY%20in%20Gnome" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
 
-	<p class="counter"> 1  1</p>
-
-    
-</nav>
-</div>
-
+        </article>
+        <div class="comments">
+            <h3></h3>
+            
+        </div>
     </main>
-
     <aside class="author">
     <a href="https://samjuvonen.com/about/"><img class="profile-image" src="https://samjuvonen.com/img/sjj2.jpg" alt="Sami Juvonen" /></a>
     <p class="name"> 

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>samjuvonen.com &middot; Lightly Seared on the Reality Grill</title>
+        <title>Lightly Seared on the Reality Grill</title>
         <meta name="author" content="Sami Juvonen">
         <meta name="description" content="Techie notes carved on some passing electrons.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,6 @@
         <link href="https://samjuvonen.com/post/index.xml" rel="feed" type="application/rss+xml" title="samjuvonen.com" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://samjuvonen.com/css/styles.css">
-        <link rel="stylesheet" href="https://samjuvonen.com/css/pygments.css">
         <link rel="stylesheet" href="https://samjuvonen.com/css/custom.css">
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -23,6 +22,7 @@
         <meta name="theme-color" content="#ffffff">
 
 
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css">
         <script src="https://samjuvonen.com/js/vendor/modernizr-2.8.0.min.js"></script>
         <style>
          .site-header h2 .logo {
@@ -46,13 +46,13 @@
             </div>
         </header>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-        
-        
-            <article class="post">
-    
-<h1><a href="https://samjuvonen.com/2016/08/using-eurkey-in-gnome" title="Using EurKEY in Gnome">Using EurKEY in Gnome</a></h1>
+        <article class="post">
+            <a class="btn home" href="https://samjuvonen.com/" title=""> ◀ </a>
+            
+<h1><a href="https://samjuvonen.com/post/using-eurkey-in-gnome/" title="Using EurKEY in Gnome">Using EurKEY in Gnome</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.08.21">2016.08.21</time>
 
@@ -71,7 +71,7 @@
 </span>
 </footer>
 
-    <p><em>Update:</em> Well, it seems that Gnome 3.20 on Fedora 24 actually has EurKEY
+            <p><em>Update:</em> Well, it seems that Gnome 3.20 on Fedora 24 actually has EurKEY
 selectable from the GUI. Nice! The rest of the post is still accurate,
 if a bit superfluous now.</p>
 
@@ -81,54 +81,57 @@ Finnish, Swedish, German or any other European languages. These days with
 Unicode in all the things, it&rsquo;s pretty lame to write these languages in 7-bit
 ASCII like it was still the 1970&rsquo;s. Unfortunately it is impossible to configure
 in Gnome&rsquo;s Regional Settings.</p>
-    <a href="https://samjuvonen.com/2016/08/using-eurkey-in-gnome" title="Using EurKEY in Gnome"> Read more&hellip;</a>
-</article>
 
-        
-            <article class="post">
-    
-<h1><a href="https://samjuvonen.com/2016/08/printing-pretty-from-emacs" title="Printing pretty from Emacs">Printing pretty from Emacs</a></h1>
+<p>Fortunately EurKEY is part of xkb and Gnome keyboard configuration is a
+wrapper around it, it can be set up with dconf or dconf-editor.</p>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.08.18">2016.08.18</time>
+<p>To read the current settings:</p>
 
-    &middot; 
-        
-        <a href="https://samjuvonen.com/tags/emacs">emacs</a>, 
-        
-        <a href="https://samjuvonen.com/tags/orgmode">orgmode</a>, 
-        
-        <a href="https://samjuvonen.com/tags/latex">latex</a>
-        
-    
+<pre><code class="language-sh">$ dconf read /org/gnome/desktop/input-sources/sources
+[('xkb', 'us')]
+</code></pre>
 
-</span>
-</footer>
+<p>You can also browse to the above path in dconf-editor.</p>
 
-    <p>Emacs (The One True Editor) and Orgmode are both awesome tools and a
-fantastic pairing and also an infuriating, fiendishly complex system.
-But still lovable. For printing or &ndash; more likely &ndash; producing PDFs,
-Orgmode naturally comes with a working LaTeX exporter. The default
-output from it is, well, if you&rsquo;ve seen default Latex output, not very
-pretty. Not only does it use traditional Latin Modern fonts, but things
-like hyperlinks are rendered in hideous red boxes.</p>
+<p>To set the key, write to it. The example show setting a secondary layout
+as well that you can switch to in Gnome.</p>
 
-<p>Of course, this being Emacs and Org, this can be fixed. Here&rsquo;s my
-current setup.</p>
-    <a href="https://samjuvonen.com/2016/08/printing-pretty-from-emacs" title="Printing pretty from Emacs"> Read more&hellip;</a>
-</article>
+<pre><code class="language-sh">$ dconf write /org/gnome/desktop/input-sources/sources &quot;[('xkb', 'eu'), ('xkb', 'us+alt-intl')]&quot; 
+</code></pre>
 
-        
-        <div class="pagination">
-<nav>
+<pre><code class="language-sh">$ dconf read /org/gnome/desktop/input-sources/sources
+[('xkb', 'eu'), ('xkb', 'us+alt-intl')]
+</code></pre>
 
-	<p class="counter"> 1  1</p>
+<p>Now ä is on RightAlt-a, ö is on RightAlt-o, and things like ß, ç, ü are
+pretty much where you&rsquo;d expect them to be. You also have various
+currency signs (£¥€¢), symbols etc, right under your fingers.</p>
 
-    
-</nav>
-</div>
+<p>Thanks to Steffen Brüntjen for EurKEY! Check <a href="http://eurkey.steffen.bruentjen.eu/start.html">his
+site</a> for details.</p>
 
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsamjuvonen.com%2fpost%2fusing-eurkey-in-gnome%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Using%20EurKEY%20in%20Gnome&amp;url=https%3a%2f%2fsamjuvonen.com%2fpost%2fusing-eurkey-in-gnome%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fsamjuvonen.com%2fpost%2fusing-eurkey-in-gnome%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fsamjuvonen.com%2fpost%2fusing-eurkey-in-gnome%2f&title=Using%20EurKEY%20in%20Gnome" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        <div class="comments">
+            <h3></h3>
+            
+        </div>
     </main>
-
     <aside class="author">
     <a href="https://samjuvonen.com/about/"><img class="profile-image" src="https://samjuvonen.com/img/sjj2.jpg" alt="Sami Juvonen" /></a>
     <p class="name"> 
@@ -171,6 +174,9 @@ current setup.</p>
   </div>
 </footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/lisp.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/tex.min.js"></script>
 
 <script>hljs.initHighlightingOnLoad();</script>
 <script>window.jQuery || document.write('<script src="https:\/\/samjuvonen.com\/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>

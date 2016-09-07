@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on samjuvonen.com</title>
+    <link>https://samjuvonen.com/categories/linux/</link>
+    <description>Recent content in Linux on samjuvonen.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Aug 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://samjuvonen.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using EurKEY in Gnome</title>
+      <link>https://samjuvonen.com/2016/08/using-eurkey-in-gnome</link>
+      <pubDate>Sun, 21 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://samjuvonen.com/2016/08/using-eurkey-in-gnome</guid>
+      <description>&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; Well, it seems that Gnome 3.20 on Fedora 24 actually has EurKEY
+selectable from the GUI. Nice! The rest of the post is still accurate,
+if a bit superfluous now.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://eurkey.steffen.bruentjen.eu/start.html&#34;&gt;EurKEY&lt;/a&gt; is the best general
+layout for basic US keyboards. It gives me easy access to keys required by
+Finnish, Swedish, German or any other European languages. These days with
+Unicode in all the things, it&amp;rsquo;s pretty lame to write these languages in 7-bit
+ASCII like it was still the 1970&amp;rsquo;s. Unfortunately it is impossible to configure
+in Gnome&amp;rsquo;s Regional Settings.&lt;/p&gt;
+
+&lt;p&gt;Fortunately EurKEY is part of xkb and Gnome keyboard configuration is a
+wrapper around it, it can be set up with &lt;code&gt;dconf&lt;/code&gt; or dconf-editor.&lt;/p&gt;
+
+&lt;p&gt;To read the current settings:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span&gt;&lt;/span&gt;$ dconf &lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; /org/gnome/desktop/input-sources/sources
+&lt;span class=&#34;o&#34;&gt;[(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;xkb&amp;#39;&lt;/span&gt;, &lt;span class=&#34;s1&#34;&gt;&amp;#39;us&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You can also browse to the above path in dconf-editor.&lt;/p&gt;
+
+&lt;p&gt;To set the key, write to it. The example show setting a secondary layout
+as well that you can switch to in Gnome.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span&gt;&lt;/span&gt;$ dconf write /org/gnome/desktop/input-sources/sources &lt;span class=&#34;s2&#34;&gt;&amp;quot;[(&amp;#39;xkb&amp;#39;, &amp;#39;eu&amp;#39;), (&amp;#39;xkb&amp;#39;, &amp;#39;us+alt-intl&amp;#39;)]&amp;quot;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span&gt;&lt;/span&gt;$ dconf &lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; /org/gnome/desktop/input-sources/sources
+&lt;span class=&#34;o&#34;&gt;[(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;xkb&amp;#39;&lt;/span&gt;, &lt;span class=&#34;s1&#34;&gt;&amp;#39;eu&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;xkb&amp;#39;&lt;/span&gt;, &lt;span class=&#34;s1&#34;&gt;&amp;#39;us+alt-intl&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now ä is on RightAlt-a, ö is on RightAlt-o, and things like ß, ç, ü are
+pretty much where you&amp;rsquo;d expect them to be. You also have various
+currency signs (£¥€¢), symbols etc, right under your fingers.&lt;/p&gt;
+
+&lt;p&gt;Thanks to Steffen Brüntjen for EurKEY! Check &lt;a href=&#34;http://eurkey.steffen.bruentjen.eu/start.html&#34;&gt;his
+site&lt;/a&gt; for details.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

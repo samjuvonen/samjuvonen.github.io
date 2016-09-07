@@ -12,8 +12,7 @@
         <link href="https://samjuvonen.com/post/index.xml" rel="feed" type="application/rss+xml" title="samjuvonen.com" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://samjuvonen.com/css/styles.css">
-        <link rel="stylesheet" href="https://samjuvonen.com/css/pygments.css">
-        <link rel="stylesheet" href="https://samjuvonen.com/css/custom.css">
+        <link rel="stylesheet" href="/css/custom.css">
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -23,6 +22,7 @@
         <meta name="theme-color" content="#ffffff">
 
 
+        <link rel="stylesheet" href="https://samjuvonen.com/css/highlightjs/monokai.css">
         <script src="https://samjuvonen.com/js/vendor/modernizr-2.8.0.min.js"></script>
         <style>
          .site-header h2 .logo {
@@ -48,28 +48,55 @@
 
 <div class="container clearfix">
     <main role="main" class="content">
-    <a class="btn home" href="https://samjuvonen.com/" title="">&laquo; </a>
-    <h2>Categories:</a>
-    <ul>
-     
-        <li>
-            <a href="emacs">emacs (1)</a>
-        </li>
-    
-        <li>
-            <a href="linux">linux (1)</a>
-        </li>
-    
-    </ul>
-    </main>
-    <aside class="author">
-    <a href="https://samjuvonen.com/about/"><img class="profile-image" src="https://samjuvonen.com/img/sjj2.jpg" alt="Sami Juvonen" /></a>
-    <p class="name"> 
-        <strong>Sami Juvonen</strong></p>
-    <p class="address">Earth</p>
-    <p class="link"></p>
-    <ul class="social">
+        <a class="btn home" href="https://samjuvonen.com/" title=""> ◀ </a>
         
+        
+        <article class="post">
+    
+<h1><a href="https://samjuvonen.com/post/migrate-from-jekyll/" title="Migrate from Jekyll">Migrate from Jekyll</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2015.10.10">2015.10.10</time>
+
+    &middot; 
+        
+        <a href="https://samjuvonen.com/tags/jekyll">jekyll</a>, 
+        
+        <a href="https://samjuvonen.com/tags/migration">migration</a>, 
+        
+        <a href="https://samjuvonen.com/tags/hugo">hugo</a>
+        
+    
+
+</span>
+</footer>
+
+    <p><h2 id="move-static-content-to-static">Move static content to <code>static</code></h2>
+
+<p>Jekyll has a rule that any directory not starting with <code>_</code> will be copied as-is to the <code>_site</code> output. Hugo keeps all static content under <code>static</code>. You should therefore move it all there.
+With Jekyll, something that looked like&hellip;</p>
+    <a href="https://samjuvonen.com/post/migrate-from-jekyll/" title="Migrate from Jekyll"> &raquo;</a>
+</article>
+
+        
+        <div class="pagination">
+<nav>
+
+	<p class="counter"> 1  1</p>
+
+    
+</nav>
+</div>
+
+    </main>
+
+    <aside class="author">
+  <img class="profile-image" src="https://samjuvonen.com/img/sjj2.jpg" alt="Sami Juvonen" />
+  <p class="name"> 
+  <strong>Sami Juvonen</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
 
 
 
@@ -91,8 +118,8 @@
 
 <li><a href="https://samjuvonen.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
 
-    </ul>
-    <br><br>
+  </ul>
+  <br><br>
 </aside>
 
 </div>
@@ -103,7 +130,7 @@
   </div>
 </footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script>window.jQuery || document.write('<script src="https:\/\/samjuvonen.com\/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 <script src="https://samjuvonen.com/js/plugins.js"></script>

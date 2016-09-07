@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on samjuvonen.com</title>
+    <link>https://samjuvonen.com/tags/emacs/</link>
+    <description>Recent content in Emacs on samjuvonen.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Aug 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://samjuvonen.com/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Printing pretty from Emacs</title>
+      <link>https://samjuvonen.com/2016/08/printing-pretty-from-emacs</link>
+      <pubDate>Thu, 18 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://samjuvonen.com/2016/08/printing-pretty-from-emacs</guid>
+      <description>&lt;p&gt;Emacs (The One True Editor) and Orgmode are both awesome tools and a
+fantastic pairing and also an infuriating, fiendishly complex system.
+But still lovable. For printing or &amp;ndash; more likely &amp;ndash; producing PDFs,
+Orgmode naturally comes with a working LaTeX exporter. The default
+output from it is, well, if you&amp;rsquo;ve seen default Latex output, not very
+pretty. Not only does it use traditional Latin Modern fonts, but things
+like hyperlinks are rendered in hideous red boxes.&lt;/p&gt;
+
+&lt;p&gt;Of course, this being Emacs and Org, this can be fixed. Here&amp;rsquo;s my
+current setup.&lt;/p&gt;
+
+&lt;p&gt;First of all, let&amp;rsquo;s use XeLaTeX for fonts and Unicode support. LatexMk
+will know how many times the source needs to processed.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;texcmd&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;latexmk -xelatex&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;org-latex-pdf-process&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;list&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;texcmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Since I don&amp;rsquo;t write formal articles, I don&amp;rsquo;t usually need a table of
+contents or section numbers. If I do, I can set them up in the Org file
+header.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;org-export-with-toc&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;org-export-with-section-numbers&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Import fontspec for easy loading of fonts, and microtype because why
+not. ox-latex needs to be loaded so the alist variables are available.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;require&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;ox-latex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;;; these packages will be used by all org latex exports&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;add-to-list&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;org-latex-packages-alist&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;fontspec&amp;quot;&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;add-to-list&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;org-latex-packages-alist&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;microtype&amp;quot;&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, define an export class that uses nice fonts and non-eye-bleeding
+hyperlinks.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;add-to-list&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;org-latex-packages-alist&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;usenames,dvipsnames&amp;quot;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;color&amp;quot;&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;add-to-list&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;org-latex-classes&lt;/span&gt;
+        &lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;sjj-org-article&amp;quot;&lt;/span&gt;
+        &lt;span class=&#34;s&#34;&gt;&amp;quot;\\documentclass[10pt,letterpaper]{scrartcl}&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;[DEFAULT-PACKAGES]&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;[PACKAGES]&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;\\setromanfont{TeX Gyre Pagella}&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;\\setsansfont{Linux Biolinum O}&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;\\setmonofont[Scale=0.9]{DejaVu Sans Mono}&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;\\pagestyle{empty}&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;\\hypersetup{&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;colorlinks = true, % colored links, no hideous boxes &lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;urlcolor   = MidnightBlue, % external hyperlinks&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;linkcolor  = PineGreen, % internal links&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;citecolor  = PineGreen  % citations&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;\\title{}&lt;/span&gt;
+&lt;span class=&#34;s&#34;&gt;[EXTRA]&amp;quot;&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;\\section{%s}&amp;quot;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;\\section*{%s}&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;\\subsection{%s}&amp;quot;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;\\subsection*{%s}&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;\\subsubsection{%s}&amp;quot;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;\\subsubsection*{%s}&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;\\paragraph{%s}&amp;quot;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;\\paragraph*{%s}&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;\\subparagraph{%s}&amp;quot;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;\\subparagraph*{%s}&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Make this the default Latex export.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;org-latex-default-class&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;sjj-org-article&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is a &lt;a href=&#34;https://samjuvonen.com/img/butterchicken.pdf&#34;&gt;sample output file&lt;/a&gt; (PDF) from this
+setup. Not too shabby.&lt;/p&gt;
+
+&lt;p&gt;You can check out my whole Emacs configuration at
+&lt;a href=&#34;https://github.com/samjuvonen/dot-emacs/&#34;&gt;github&lt;/a&gt;. Comments welcome!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Credits:&lt;/em&gt; &lt;a href=&#34;http://emacs-fu.blogspot.com/2011/04/nice-looking-pdfs-with-org-mode-and.html&#34;&gt;This emacs-fu
+post&lt;/a&gt;
+was for an earlier version of Org.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
