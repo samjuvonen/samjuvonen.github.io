@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on samjuvonen.com</title>
-    <link>https://samjuvonen.com/about/</link>
+    <link>http://samjuvonen.com/about/</link>
     <description>Recent content in Abouts on samjuvonen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 03 Sep 2016 16:41:07 -0700</lastBuildDate>
-    <atom:link href="https://samjuvonen.com/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://samjuvonen.com/about/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About me</title>
-      <link>https://samjuvonen.com/about/</link>
+      <link>http://samjuvonen.com/about/</link>
       <pubDate>Sat, 03 Sep 2016 16:41:07 -0700</pubDate>
       
-      <guid>https://samjuvonen.com/about/</guid>
+      <guid>http://samjuvonen.com/about/</guid>
       <description>
 
 &lt;h2 id=&#34;about-this-blog&#34;&gt;About this blog&lt;/h2&gt;

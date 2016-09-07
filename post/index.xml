@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on samjuvonen.com</title>
-    <link>https://samjuvonen.com/post/</link>
+    <link>http://samjuvonen.com/post/</link>
     <description>Recent content in Posts on samjuvonen.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 07 Sep 2016 16:05:59 -0700</lastBuildDate>
-    <atom:link href="https://samjuvonen.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://samjuvonen.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Quick Ansible structure initialization</title>
-      <link>https://samjuvonen.com/2016/09/quick-ansible-structure-initialization</link>
+      <link>http://samjuvonen.com/2016/09/quick-ansible-structure-initialization</link>
       <pubDate>Wed, 07 Sep 2016 16:05:59 -0700</pubDate>
       
-      <guid>https://samjuvonen.com/2016/09/quick-ansible-structure-initialization</guid>
+      <guid>http://samjuvonen.com/2016/09/quick-ansible-structure-initialization</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.ansible.com&#34;&gt;Ansible&lt;/a&gt; recommends using a specific directory
 structure as a
 &lt;a href=&#34;http://docs.ansible.com/ansible/playbooks_best_practices.html&#34;&gt;best practice&lt;/a&gt;.
@@ -74,10 +74,10 @@ $ ansibleinit role my-fabulous-role
     
     <item>
       <title>Using EurKEY in Gnome</title>
-      <link>https://samjuvonen.com/2016/08/using-eurkey-in-gnome</link>
+      <link>http://samjuvonen.com/2016/08/using-eurkey-in-gnome</link>
       <pubDate>Sun, 21 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://samjuvonen.com/2016/08/using-eurkey-in-gnome</guid>
+      <guid>http://samjuvonen.com/2016/08/using-eurkey-in-gnome</guid>
       <description>&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; Well, it seems that Gnome 3.20 on Fedora 24 actually has EurKEY
 selectable from the GUI. Nice! The rest of the post is still accurate,
 if a bit superfluous now.&lt;/p&gt;
@@ -118,10 +118,10 @@ site&lt;/a&gt; for details.&lt;/p&gt;
     
     <item>
       <title>Printing pretty from Emacs</title>
-      <link>https://samjuvonen.com/2016/08/printing-pretty-from-emacs</link>
+      <link>http://samjuvonen.com/2016/08/printing-pretty-from-emacs</link>
       <pubDate>Thu, 18 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://samjuvonen.com/2016/08/printing-pretty-from-emacs</guid>
+      <guid>http://samjuvonen.com/2016/08/printing-pretty-from-emacs</guid>
       <description>&lt;p&gt;Emacs (The One True Editor) and Orgmode are both awesome tools and a
 fantastic pairing and also an infuriating, fiendishly complex system.
 But still lovable. For printing or &amp;ndash; more likely &amp;ndash; producing PDFs,
@@ -185,7 +185,7 @@ hyperlinks.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;setq&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;org-latex-default-class&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;sjj-org-article&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Here is a &lt;a href=&#34;https://samjuvonen.com/img/butterchicken.pdf&#34;&gt;sample output file&lt;/a&gt; (PDF) from this
+&lt;p&gt;Here is a &lt;a href=&#34;http://samjuvonen.com/img/butterchicken.pdf&#34;&gt;sample output file&lt;/a&gt; (PDF) from this
 setup. Not too shabby.&lt;/p&gt;
 
 &lt;p&gt;You can check out my whole Emacs configuration at
